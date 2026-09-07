@@ -5,7 +5,7 @@ public:
         for (string w:words){
             uwords.insert(w);
         }
-        unordered_set<string> ans;
+        vector<string> ans;
         for (int i=0;i<words.size();i++){
             int N=words[i].length();
             int *dp = new int[N+1];
@@ -17,15 +17,13 @@ public:
                         dp[ei+1]=1;
                     }
                 }
-                if (dp[N]==1){
-                    ans.insert(words[i]);
-                }
+                
             } 
+            if (dp[N]==1){
+                    ans.push_back(words[i]);
+                }
         }
-        vector<string> fin;
-        for (string w:ans){
-            fin.push_back(w);
-        }
-        return fin;
+        
+        return ans;
     }
 };
