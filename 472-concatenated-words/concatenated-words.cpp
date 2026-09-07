@@ -17,11 +17,10 @@ public:
                         dp[ei+1]=1;
                     }
                 }
-                
             } 
             if (dp[N]==1){
-                    ans.push_back(words[i]);
-                }
+                ans.push_back(words[i]);
+            }
         }
         
         return ans;
