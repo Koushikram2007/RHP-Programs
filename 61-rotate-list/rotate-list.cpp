@@ -25,17 +25,17 @@ public:
             return head;
         }
         int moves = cnt - k;
-        ListNode* p = head;
-        while (--moves && p->next != NULL) {
-            p = p->next;
+        ListNode* tail = head;
+        while (--moves && tail->next != NULL) {
+            tail = tail->next;
         }
-        ListNode* head2 = p->next;
-        ListNode* l = head2;
-        while (l->next != NULL) {
-            l = l->next;
+        ListNode* nhead = tail->next;
+        ListNode* ntail = nhead;
+        while (ntail->next != NULL) {
+            ntail = ntail->next;
         }
-        l->next = head;
-        p->next = NULL;
-        return head2;
+        ntail->next = head;
+        tail->next = NULL;
+        return nhead;
     }
 };
